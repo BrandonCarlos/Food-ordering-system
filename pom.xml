@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.food-ordering-system</groupId>
+  <artifactId>food-ordering-system</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Archetype - food-ordering-system</name>
+  <url>http://maven.apache.org</url>
+
+<!--  For create this project I'm going to use Spring boot-->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.7</version>
+<!--    We don't need to search about file system then that is about the configuration below-->
+    <relativePath/>
+  </parent>
+
+<!--  POM packaging creates a container for submodules with jar packaging-->
+  <packaging>pom</packaging>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+
+
+  <dependencyManagement>
+
+  </dependencyManagement>
+
+  <dependencies>
+
+  </dependencies>
+
+  <build>
+
+  </build>
+
+</project>
