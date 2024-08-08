@@ -15,5 +15,10 @@
 
 <!--    Each dependency need to be declared in here because this need to demonstrate isolate and independent domain of our application include business logic-->
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.food-ordering-system</groupId>
+            <artifactId>common-domain</artifactId><!-- I will go to use same object from common-domain module that is it why I needed to put this dependency in here -->
+        </dependency>
+    </dependencies>
 </project>

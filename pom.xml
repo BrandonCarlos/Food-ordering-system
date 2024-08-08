@@ -6,6 +6,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>order-service</module>
+    <module>common</module>
   </modules>
   <name>Archetype - food-ordering-system</name>
   <url>http://maven.apache.org</url>
@@ -55,6 +56,11 @@
         <version>${project.version}</version>
       </dependency>
 <!--      I don't need to put order-container in here because other modules won't use this order-container, order-container will create a single jar file soon -->
+      <dependency>
+        <groupId>com.food-ordering-system</groupId>
+        <artifactId>common-domain</artifactId>
+        <version>${project.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
