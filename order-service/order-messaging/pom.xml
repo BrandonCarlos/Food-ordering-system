@@ -12,4 +12,12 @@
 
     <properties>
     </properties>
+
+<!--    This module will implement methods about messaging from order-domain-core(domain layer) -->
+    <dependencies>
+        <dependency>
+            <groupId>com.food-ordering-system</groupId>
+            <artifactId>order-application-service</artifactId>
+        </dependency>
+    </dependencies>
 </project>

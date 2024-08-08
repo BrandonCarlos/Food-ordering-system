@@ -12,4 +12,12 @@
 
     <properties>
     </properties>
+
+<!--    domain-core will have interface that order-application-service will implement those methods through ports and adapters -->
+    <dependencies>
+        <dependency>
+            <groupId>com.food-ordering-system</groupId>
+            <artifactId>order-application-service</artifactId><!-- this module will have ports and adapter because we will use hexagonal architecture -->
+        </dependency>
+    </dependencies>
 </project>

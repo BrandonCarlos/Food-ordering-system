@@ -12,4 +12,14 @@
 
     <properties>
     </properties>
+
+<!--    This module will call sometimes order-domain-core because this module rely on him -->
+    <dependencies>
+        <dependency>
+            <groupId>com.food-ordering-system</groupId>
+            <artifactId>order-domain-core</artifactId>
+<!--    I don't need to declare version over here because I already declared in the BASE POM -->
+        </dependency>
+    </dependencies>
+
 </project>

@@ -12,4 +12,12 @@
 
     <properties>
     </properties>
+
+<!--    This module will have the first contact with the client, and it will work through request from order-domain-core(domain layer)-->
+    <dependencies>
+        <dependency>
+            <groupId>com.food-ordering-system</groupId>
+            <artifactId>order-application-service</artifactId><!-- this module will depend on from order-application-service -->
+        </dependency>
+    </dependencies>
 </project>

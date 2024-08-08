@@ -13,4 +13,7 @@
     <properties>
     </properties>
 
+<!--    Each dependency need to be declared in here because this need to demonstrate isolate and independent domain of our application include business logic-->
+
+
 </project>

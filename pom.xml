@@ -26,9 +26,36 @@
     <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
   </properties>
 
-
+<!-- Is in here that I will going to declare version of each dependency like ${project.version} -->
   <dependencyManagement>
-
+    <dependencies>
+      <dependency>
+        <groupId>com.food-ordering-system</groupId>
+        <artifactId>order-domain-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.food-ordering-system</groupId>
+        <artifactId>order-application-service</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.food-ordering-system</groupId>
+        <artifactId>order-application</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.food-ordering-system</groupId>
+        <artifactId>order-dataaccess</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.food-ordering-system</groupId>
+        <artifactId>order-messaging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+<!--      I don't need to put order-container in here because other modules won't use this order-container, order-container will create a single jar file soon -->
+    </dependencies>
   </dependencyManagement>
 
   <dependencies>
