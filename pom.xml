@@ -4,6 +4,9 @@
   <groupId>com.food-ordering-system</groupId>
   <artifactId>food-ordering-system</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>order-service</module>
+  </modules>
   <name>Archetype - food-ordering-system</name>
   <url>http://maven.apache.org</url>
 
@@ -20,8 +23,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
   </properties>
 
 
@@ -34,7 +36,16 @@
   </dependencies>
 
   <build>
-
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <release>17</release><!-- This is the java's version -->
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
 </project>
