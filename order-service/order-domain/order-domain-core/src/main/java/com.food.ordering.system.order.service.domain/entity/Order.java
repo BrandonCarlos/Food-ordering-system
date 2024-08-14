@@ -18,6 +18,7 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
     private final StreetAddress deliveryAddress;
     private final Money money;//this field came from Common module
     private final List<OrderItem> items;
+    private final Money price;
 
     private TrackingId trackingId;//This 3 fields over here is not final because I will go set them during business logic after created "Order entity"
     private OrderStatus orderStatus;
@@ -43,9 +44,26 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
     }
 
     private void validateTotalPrice() {
+        if(price != null && price.isGreaterThanZero()) {
+            throw new OrderDomainException("Total price must be greater than zero!");
+        }
     }
 
     private void validateItemsPrice() {
+        Money orderItemTotal = items.stream().map(orderItem -> { //In here we'll get subTotal over each of orderItem and increasing, creating then a SubTotal
+            validateItemPrice(orderItem);
+            return orderItem.getSubTotal();
+        }).reduce(Money.ZERO, Money::add);//Money.ZERO <- is from BigDecimal function that we have in there
+
+        if (!price.equals(orderItemTotal)) {
+            throw new OrderDomainException("Total price: " + price.getAmount() + " is not equals to Order items total: " + orderItemTotal.getAmount() + "!");
+        }
+    }
+
+    private void validateItemPrice(OrderItem orderItem) {
+        if (!orderItem.isPriceValid()) {
+            throw new OrderDomainException("Order item price: " + orderItem.getPrice().getAmount() + " is not valid for product " + orderItem.getProduct().getId().getValue());
+        }
     }
 
     private void initializeOrderItems() {//remember void over here that is because we'll won't return any value from this method
@@ -61,6 +79,7 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
         restaurantId = builder.restaurantId;
         deliveryAddress = builder.deliveryAddress;
         money = builder.money;
+        price = builder.price;
         items = builder.items;
         trackingId = builder.trackingId;
         orderStatus = builder.orderStatus;
@@ -106,6 +125,7 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
         private RestaurantId restaurantId;
         private StreetAddress deliveryAddress;
         private Money money;
+        private Money price;
         private List<OrderItem> items;
         private TrackingId trackingId;
         private OrderStatus orderStatus;
@@ -144,6 +164,11 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
             return this;
         }
 
+        public Builder price(Money val) {
+            price = val;
+            return this;
+        }
+
         public Builder items(List<OrderItem> val) {
             items = val;
             return this;
@@ -165,7 +190,7 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
         }
 
         public Order build() {
-            return new Order(this);
+            return new Order(this, price);
         }
     }
 }

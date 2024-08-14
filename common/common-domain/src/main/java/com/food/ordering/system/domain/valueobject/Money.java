@@ -6,6 +6,8 @@ import java.util.Objects;
 
 public class Money { //Remember we can put same business logic in here
 
+    public static final Money ZERO = new Money(BigDecimal.ZERO);
+
     private final BigDecimal amount; /* private field then I need to put this in the constructor, this valueObject like that others we need to put this as private field, because is immutable field */
 
     public Money(BigDecimal amount) {
