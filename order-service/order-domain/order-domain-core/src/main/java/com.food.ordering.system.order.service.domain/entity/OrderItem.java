@@ -13,6 +13,13 @@ public class OrderItem extends BaseEntity<OrderItemId> {
     private final Money price;
     private final Money subTotal;
 
+    //I made this method like "private" because we'll don't need to this method will be search from outside, only Order class can access this method
+    //I don't declare any access modifier over here then that is a "private package"
+    void initializeOrderItem(OrderId orderId, OrderItemId orderItemId) {//I will go receive orderId and orderItemId as parameter in this method from "Order class"
+        this.orderId = orderId;
+        super.setId(orderItemId);
+    }
+
     private OrderItem(Builder builder) {//Look in here We'll don't use "public contructor" anymore because the constrcutor over here don't need to be visualized outside
         super.setId(builder.orderItemId);
         product = builder.product;
