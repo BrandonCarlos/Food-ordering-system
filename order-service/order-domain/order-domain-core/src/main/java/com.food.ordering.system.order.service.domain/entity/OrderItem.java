@@ -1,9 +1,9 @@
-package src.main.java.com.food.ordering.system.order.service.domain.entity;
+package com.food.ordering.system.order.service.domain.entity;
 
-import src.main.java.com.food.ordering.system.domain.entity.BaseEntity;
-import src.main.java.com.food.ordering.system.domain.valueobject.Money;
-import src.main.java.com.food.ordering.system.domain.valueobject.OrderId;
-import src.main.java.com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
+import com.food.ordering.system.domain.entity.BaseEntity;
+import com.food.ordering.system.domain.valueobject.Money;
+import com.food.ordering.system.domain.valueobject.OrderId;
+import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
 
 //Here is my Domain business then I don't need to put any dependency over here
 public class OrderItem extends BaseEntity<OrderItemId> {
