@@ -65,7 +65,16 @@
   </dependencyManagement>
 
   <dependencies>
-
+<!--    I will go to use dependencies below even in Domain Service -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
