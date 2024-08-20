@@ -14,6 +14,10 @@ public class Product extends BaseEntity<ProductId> {
         this.price = price;
     }
 
+    public Product(ProductId productId) {
+        super.setId(productId);//invoking super word for call productId attribute in here
+    }
+
     public void updateWithConfirmedNameAndPrice(String name, Money price) {
         this.name = name;
         this.price = price;

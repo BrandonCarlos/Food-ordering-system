@@ -56,4 +56,6 @@ public class Money { //Remember we can put same business logic in here
     private BigDecimal setScale(BigDecimal input) {
         return input.setScale(2, RoundingMode.HALF_EVEN);
     }
+
+
 }
