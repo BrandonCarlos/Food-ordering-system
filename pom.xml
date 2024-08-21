@@ -25,6 +25,7 @@
 
   <properties>
     <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
+    <mockito.version>5.7.0</mockito.version>
   </properties>
 
 <!-- Is in here that I will going to declare version of each dependency like ${project.version} -->
@@ -60,6 +61,12 @@
         <groupId>com.food-ordering-system</groupId>
         <artifactId>common-domain</artifactId>
         <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

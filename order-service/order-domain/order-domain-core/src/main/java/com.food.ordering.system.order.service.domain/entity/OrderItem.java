@@ -5,10 +5,12 @@ import com.food.ordering.system.domain.valueobject.Money;
 import com.food.ordering.system.domain.valueobject.OrderId;
 import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
 
+import java.util.UUID;
+
 //Here is my Domain business then I don't need to put any dependency over here
 public class OrderItem extends BaseEntity<OrderItemId> {
     private OrderId orderId;//this field is not final because this field will be increment layer during business logic
-    private final Product product;
+    private final Product productId;
     private final int quantity;
     private final Money price;
     private final Money subTotal;
@@ -21,12 +23,12 @@ public class OrderItem extends BaseEntity<OrderItemId> {
     }
 
     boolean isPriceValid() {
-        return price.isGreaterThanZero() && price.equals(product.getPrice()) && price.multiply(quantity).equals(subTotal);
+        return price.isGreaterThanZero() && price.equals(productId.getPrice()) && price.multiply(quantity).equals(subTotal);
     }
 
     private OrderItem(Builder builder) {//Look in here We'll don't use "public contructor" anymore because the constrcutor over here don't need to be visualized outside
         super.setId(builder.orderItemId);
-        product = builder.product;
+        productId = builder.productId;
         quantity = builder.quantity;
         price = builder.price;
         subTotal = builder.subTotal;
@@ -35,7 +37,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
 
     public static final class Builder {
         private OrderItemId orderItemId;
-        private Product product;
+        private Product productId;
         private int quantity;
         private Money price;
         private Money subTotal;
@@ -52,8 +54,8 @@ public class OrderItem extends BaseEntity<OrderItemId> {
             return this;
         }
 
-        public Builder product(Product val) {
-            product = val;
+        public Builder productId(Product val) {
+            productId = val;
             return this;
         }
 
@@ -75,6 +77,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         public OrderItem build() {
             return new OrderItem(this);
         }
+
     }
 
     //The getters below will be needed by mappers
@@ -83,7 +86,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
     }
 
     public Product getProduct() {
-        return product;
+        return productId;
     }
 
     public int getQuantity() {
