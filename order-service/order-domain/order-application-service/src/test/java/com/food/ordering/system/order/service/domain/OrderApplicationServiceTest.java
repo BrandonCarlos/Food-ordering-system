@@ -69,18 +69,18 @@ public class OrderApplicationServiceTest {
                                 .city("Paris")
                                 .build())
                 .price(PRICE)
-                .items(List.of(com.food.ordering.system.order.service.domain.entity.OrderItem.Builder.builder()
-                                .productId(PRODUCT_ID)
-                                .quantity(1)
-                                .price(new BigDecimal("50.00"))
-                                .subTotal(new BigDecimal("50.00"))
-                        .build(),
-                        OrderItem.builder()
-                                .productId(PRODUCT_ID)
-                                .quantity(3)
-                                .price(new BigDecimal("50.00"))
-                                .subTotal(new BigDecimal("150.00"))
-                                .build()))
+//                .items(List.of(com.food.ordering.system.order.service.domain.entity.OrderItem.Builder.builder()
+////                                .productId(PRODUCT_ID)
+//                                .quantity(1)
+//                                .price(new BigDecimal("50.00"))
+//                                .subTotal(new BigDecimal("50.00"))
+//                        .build(),
+//                        OrderItem.builder()
+//                                .productId(PRODUCT_ID)
+//                                .quantity(3)
+//                                .price(new BigDecimal("50.00"))
+//                                .subTotal(new BigDecimal("150.00"))
+//                                .build()))
                 .build();
 
 
@@ -93,18 +93,18 @@ public class OrderApplicationServiceTest {
                         .city("Paris")
                         .build())
                 .price(new BigDecimal("250.00"))
-                .items(List.of(com.food.ordering.system.order.service.domain.entity.OrderItem.Builder.builder()
-                                .productId(PRODUCT_ID)
-                                .quantity(1)
-                                .price(new BigDecimal("50.00"))
-                                .subTotal(new BigDecimal("50.00"))
-                        .build(),
-                        OrderItem.builder()
-                                .productId(PRODUCT_ID)
-                                .quantity(3)
-                                .price(new BigDecimal("50.00"))
-                                .subTotal(new BigDecimal("150.00"))
-                                .build()))
+//                .items(List.of(com.food.ordering.system.order.service.domain.entity.OrderItem.Builder.builder()
+//                                .productId(PRODUCT_ID)
+//                                .quantity(1)
+//                                .price(new BigDecimal("50.00"))
+//                                .subTotal(new BigDecimal("50.00"))
+//                        .build(),
+//                        OrderItem.builder()
+//                                .productId(PRODUCT_ID)
+//                                .quantity(3)
+//                                .price(new BigDecimal("50.00"))
+//                                .subTotal(new BigDecimal("150.00"))
+//                                .build()))
                 .build();
 
 
@@ -117,18 +117,18 @@ public class OrderApplicationServiceTest {
                         .city("Paris")
                         .build())
                 .price(new BigDecimal("210.00"))
-                .items(List.of(OrderItem.builder()
-                                .productId(PRODUCT_ID)
-                                .quantity(1)
-                                .price(new BigDecimal("60.00"))
-                                .subTotal(new BigDecimal("60.00"))
-                        .build(),
-                        OrderItem.builder()
-                                .productId(PRODUCT_ID)
-                                .quantity(3)
-                                .price(new BigDecimal("50.00"))
-                                .subTotal(new BigDecimal("150.00"))
-                                .build()))
+//                .items(List.of(OrderItem.builder()
+//                                .productId(PRODUCT_ID)
+//                                .quantity(1)
+//                                .price(new BigDecimal("60.00"))
+//                                .subTotal(new BigDecimal("60.00"))
+//                        .build(),
+//                        OrderItem.builder()
+//                                .productId(PRODUCT_ID)
+//                                .quantity(3)
+//                                .price(new BigDecimal("50.00"))
+//                                .subTotal(new BigDecimal("150.00"))
+//                                .build()))
                 .build();
 
         Customer customer = new Customer();
