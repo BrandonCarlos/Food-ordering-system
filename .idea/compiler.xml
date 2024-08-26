@@ -28,10 +28,9 @@
         <module name="order-messaging" />
         <module name="kafka-model" />
         <module name="order-application-service" />
-        <module name="infrastructure" />
         <module name="kafka-consumer" />
-        <module name="common-domain" />
         <module name="kafka-producer" />
+        <module name="common-domain" />
         <module name="order-application" />
         <module name="kafka-config-data" />
         <module name="order-domain-core" />
@@ -45,8 +44,8 @@
       <module name="common" options="" />
       <module name="common-domain" options="-parameters" />
       <module name="food-ordering-system" options="" />
-      <module name="infrastructure" options="-parameters" />
-      <module name="kafka" options="" />
+      <module name="infrastructure" options="" />
+      <module name="kafka" options="-parameters" />
       <module name="kafka-config-data" options="-parameters" />
       <module name="kafka-consumer" options="-parameters" />
       <module name="kafka-model" options="-parameters" />

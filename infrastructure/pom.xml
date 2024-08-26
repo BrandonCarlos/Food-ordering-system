@@ -9,4 +9,5 @@
     <artifactId>infrastructure</artifactId>
     <name>Archetype - infrastructure</name>
     <url>http://maven.apache.org</url>
+    <packaging>pom</packaging>
 </project>
