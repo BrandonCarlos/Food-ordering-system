@@ -24,6 +24,8 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
     private OrderStatus orderStatus;
     private List<String> failureMessages;
 
+    public static final String FAILURE_MESSAGE_DELIMITER = ",";
+
     public void initializeOrder() {
         setId(new OrderId(UUID.randomUUID()));//setId is from BaseEntity and I can access this in this manner because this method is public
         trackingId = new TrackingId(UUID.randomUUID());
@@ -143,6 +145,7 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
     public Money getMoney() {
         return money;
     }
+    public Money getPrice() {return price;}
 
     public List<OrderItem> getItems() {
         return items;
