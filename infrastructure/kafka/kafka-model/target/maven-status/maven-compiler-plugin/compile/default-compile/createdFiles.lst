@@ -8,5 +8,7 @@ com\food\ordering\system\kafka\order\avro\model\PaymentOrderStatus.class
 com\food\ordering\system\kafka\order\avro\model\paymentStatus.class
 com\food\ordering\system\kafka\order\avro\model\RestaurantOrderStatus.class
 com\food\ordering\system\kafka\order\avro\model\OrderApprovalStatus.class
+com\food\ordering\system\kafka\order\avro\model\PaymentRequestAvroModel.class
 com\food\ordering\system\kafka\order\avro\model\PaymentResponseAvroModel$Builder.class
+com\food\ordering\system\kafka\order\avro\model\PaymentRequestAvroModel$Builder.class
 com\food\ordering\system\kafka\order\avro\model\RestaurantApprovalResponseAvroModel$Builder.class

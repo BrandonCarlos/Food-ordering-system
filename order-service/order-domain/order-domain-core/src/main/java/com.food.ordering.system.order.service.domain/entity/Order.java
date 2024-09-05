@@ -16,7 +16,7 @@ public class Order extends AggregateRoot<OrderId> {//First Entity object, Aggreg
     private final CustomerId customerId; //this field came from Common module
     private final RestaurantId restaurantId;
     private final StreetAddress deliveryAddress;
-    private final Money money;//this field came from Common module
+    private final Money money;
     private final List<OrderItem> items;
     private final Money price;
 
