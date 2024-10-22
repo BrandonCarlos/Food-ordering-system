@@ -66,7 +66,7 @@ public class OrderMessagingDataMapper {
     }
 
     public PaymentResponse paymentResponseAvroModelToPaymentResponse(PaymentResponseAvroModel paymentResponseAvroModel) {
-        PaymentResponse.builder()
+        return PaymentResponse.builder()
                 .id(paymentResponseAvroModel.getId())
                 .sagaId(paymentResponseAvroModel.getSagaId())
                 .paymentId(paymentResponseAvroModel.getPaymentId())
@@ -75,7 +75,7 @@ public class OrderMessagingDataMapper {
                 .price(paymentResponseAvroModel.getPrice())
                 .createdAt(paymentResponseAvroModel.getCreatedAt())
                 .paymentStatus(PaymentStatus.valueOf(paymentResponseAvroModel.getPaymentOrderStatus().name()))
-                .failureMessages(paymentResponseAvroModel.getFailureMessages())
+//                .failureMessages(paymentResponseAvroModel.getFailureMessages())
                 .build();
     }
 
